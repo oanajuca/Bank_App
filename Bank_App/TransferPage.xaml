@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bank_App.TransferPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Simba va va ajuta sa efectuati un transfer bancar" TextColor="DarkBlue"/>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Transfer"
+ Clicked="OnTransferAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="transferView"
+ Margin="20"
+ ItemSelected="OnTransferViewItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Beneficiar}" Detail="{Binding iban}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

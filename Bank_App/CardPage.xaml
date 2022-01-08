@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Bank_App.CardPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Editor Placeholder="Introduceti numele de pe card" Text="{Binding Nume_Card}" HeightRequest="100" />
+            <Editor Placeholder="Introduceti numarul cardului" Text="{Binding Numar_Card}" HeightRequest="100" />
+            <Label Text="Introduceti data de expirare a cardului" />
+            <DatePicker x:Name="DatePicker" Date="{Binding Data_expirare_Card}" />
+            <Editor Placeholder="Introduceti cvc-ul cardului scris pe spate" Text="{Binding Card_Cvv}" HeightRequest="100" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save"
+ Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1"
+ Text="Delete"
+ Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
